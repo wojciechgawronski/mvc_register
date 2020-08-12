@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule ^(.*)$ /php/mvc_autoloader/public/$1 [L]
