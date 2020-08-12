@@ -17,10 +17,10 @@ W Aplikacji ze względu na katalogi i funkcje można wyróżnic obszary:
   <li><ol><b>MVC:</b>
 <li><b>core/models</b> - modele, które będą odpowiadać widokom i kontrolerom</li>
 <li><b>core/views</b> - widoki, które będą odpowiadać modelom i kontrolerom </li>
-<li><b>core/controllers</b> -kontrolery, które będą odpowiadać modelom i widokom</li>
+<li><b>core/controllers</b> - kontrolery, które będą odpowiadać modelom i widokom</li>
 </ol></li>
-<li><b>app/helpers</b> kalsu pomocnicze aplikacji, jak wysyłanie maili, generowanie tokenów</li>
-<li><b>app/core/models</b> modele, które nie pasują do helperów, ani nie mają odpowiedników w widokach i kontoloreach, np., autoryzacja</li>
+<li><b>app/helpers</b> - kalsy pomocnicze aplikacji, jak wysyłanie maili, generowanie tokenów</li>
+<li><b>app/core/models</b> - modele, które nie pasują do helperów, ani nie mają odpowiedników w widokach i kontoloreach, np., autoryzacja</li>
 </ul>
 
 <br><br>
