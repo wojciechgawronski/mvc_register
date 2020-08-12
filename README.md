@@ -1,8 +1,11 @@
 # mvc_register
-Szkielet aplikacji MVC służącej do logowania i rejestracji, na podstawie kilku tutoriali i własnych doświadczeń.
+Szkielet aplikacji w arvhotektórze MVC w czystym PHP służącej do logowania i rejestracji, na podstawie kilku tutoriali i własnych doświadczeń.
+
 Link: https://gawronsky.com.pl/mvc_register
 
-Aplikacja ze względu na katalogi i funkcje można wyróżnic:
+Zachęcam do logowania i rejestracji.
+
+W Aplikacji ze względu na katalogi i funkcje można wyróżnic obszary:
 
 <ul type='square'>
 <li><b>public</b> - jedyny dostępny publicznie katalog</li>
@@ -17,5 +20,6 @@ Aplikacja ze względu na katalogi i funkcje można wyróżnic:
 <li><b>app/core/models</b> modele, które nie pasują do helperów, ani nie mają odpowiedników w widokach i kontoloreach, np., autoryzacja</li>
 </ul>
 
-
+<br>
+<br>
 Aplikacja będzie dalej rozwijana, repozytorium powyższe przedstawia jedynie zamysł.
