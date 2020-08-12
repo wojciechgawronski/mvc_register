@@ -1,6 +1,7 @@
 <?php
 
 use app\core\Controller;
+use app\core\models\Authentication;
 use app\core\View;
 
 /**
@@ -28,7 +29,11 @@ class Home extends Controller
 
             $this->before();
 
-            View::renderView('home/index', ['name' => $name, 'mood' => $mood], $this->controller);
+            View::renderView('home/index', [
+                  'name' => $name,
+                  'mood' => $mood,
+                  'user' => Authentication::getUser()
+            ], $this->controller);
 
             $this->after();
       }

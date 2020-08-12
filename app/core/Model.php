@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace app\core;
 
@@ -12,9 +12,9 @@ class Model implements DadabaseSingletonInterface
 {
 
       /**
-     * The Singleton's constructor should always be private to prevent direct
-     * construction calls with the `new` operator.
-     */
+       * The Singleton's constructor should always be private to prevent direct
+       * construction calls with the `new` operator.
+       */
       private function __construct()
       {
       }
@@ -67,12 +67,14 @@ class Model implements DadabaseSingletonInterface
        * @param array $params array of variables
        * @return array
        */
-      public static function getRow($query, $params = [])
+      public static function getRow(string $query, array $params = [])
       {
             try {
                   $db = static::getInstance();
-                  $stmt = $db->query($query);
-                  return $stmt->fetch();
+                  $stmt = $db->prepare($query);
+                  $stmt->execute($params);
+                  $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+                  return $result;
             } catch (\PDOException $e) {
                   throw new \Exception($e->getMessage());
             }
@@ -83,11 +85,12 @@ class Model implements DadabaseSingletonInterface
        * @param array $params array of variables
        * @return array
        */
-      public static function getRows($query, $params = [])
+      public static function getRows( string $query, array $params = [])
       {
             try {
                   $db = static::getInstance();
-                  $stmt = $db->query($query);
+                  $stmt = $db->prepare($query);
+                  $stmt->execute($params);
                   $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
                   return $results;
             } catch (\PDOException $e) {
@@ -98,9 +101,28 @@ class Model implements DadabaseSingletonInterface
       /**
        * @param string $query SQL Statement
        * @param array $params array of variables
+       * @return array
+       */
+      public static function getObject(string $query, array $params = [])
+      {
+            try {
+                  $db = static::getInstance();
+                  $stmt = $db->prepare($query);
+                  $stmt->setFetchMode(\PDO::FETCH_CLASS, get_called_class());
+                  $stmt->execute($params);
+                  $result = $stmt->fetch();
+                  return $result;
+            } catch (\PDOException $e) {
+                  throw new \Exception($e->getMessage());
+            }
+      }
+
+      /**
+       * @param string $query SQL Statement
+       * @param array $params array of variables
        * @return true if inserted
        */
-      public static function insertRow($query, $params = [])
+      public static function insertRow( string $query, array $params = [])
       {
             try {
                   // $stmt = $this->database->prepare($query);
@@ -119,7 +141,7 @@ class Model implements DadabaseSingletonInterface
        * @param array $params array of variables
        * @return true if updated
        */
-      public static function updateRow($query, $params = [])
+      public static function updateRow(string $query, array $params = [])
       {
             try {
                   if (static::insertRow($query, $params)) {
@@ -135,8 +157,10 @@ class Model implements DadabaseSingletonInterface
        * @param array $params array of variables
        * @return void
        */
-      public static function deleteRow($query, $params = [])
+      public static function deleteRow(string $query, array $params = [])
       {
             self::insertRow($query, $params);
       }
+
+     
 }

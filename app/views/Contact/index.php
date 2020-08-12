@@ -1,7 +1,7 @@
 <main>
       <div class="container">
             <div class="row">
-                  <div class="col-sm-9">
+                  <div class="col-md-9">
                         <form method="post" action="form/contact">
                               <div class="form-group">
                                     <label for="email" class="small text-muted mb-0">Email:</label>
@@ -25,7 +25,7 @@
                         </div>
 
                   </div>
-                  <div class="col-sm-3">
+                  <div class="col-md-3">
                         <div class="jumbotron py-5 rounded-0 bg-transparent border border-info text-center mt-4">
                               <div id="day-name"></div>
                               <div id="date"></div>

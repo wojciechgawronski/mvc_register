@@ -9,5 +9,8 @@
                   if (!empty($data['mood'])) echo " Your mood is: <b>{$data['mood']}.</b>";
                   ?>
             </p>
+            <?php
+            // pas from View Class
+            if ($user) echo "<p class='gray i'> {$user->email}</p>"; ?>
       </div>
 </main>

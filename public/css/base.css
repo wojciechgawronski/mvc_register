@@ -2,47 +2,71 @@
 
 body {
       background-color: #222;
-      color: lightgray;
-      font-family: 'Titillium Web', sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 5px;
+      color           : lightgray;
+      font-family     : 'Titillium Web', sans-serif;
+      max-width       : 1000px;
+      margin          : 0 auto;
+      padding         : 0 5px;
 }
-.orange{
+
+.orange {
       color: orange;
 }
-.green{
+
+.green {
       color: green;
 }
-.red{
+
+.red {
       color: red;
 }
-.b{
+
+.b {
       font-weight: bold;
 }
-.i{
+
+.i {
       font-style: italic;
 }
-.u{
+
+.u {
       text-decoration: underline;
 }
-.gray{
+
+.gray {
       color: gray;
 }
-.small{
+
+.small {
       font-size: small;
 }
-a:hover{
+
+a:hover {
       text-decoration: none;
 }
-h1{
+
+h1 {
       font-weight: 200;
 }
-p.lead{
+
+p.lead {
       font-weight: 300;
 }
-pre{
-      color: darkgrey;
-      border: 1px solid #999;
+
+pre {
+      color  : darkgrey;
+      border : 1px solid #999;
       padding: 6px;
+}
+
+ul.ul-square {
+      list-style: none;
+}
+
+ul.ul-square li::before {
+      content       : "\2022";
+      color         : orange;
+      display       : inline-block;
+      width         : 1em;
+      margin-left   : -1em;
 }

@@ -6,5 +6,5 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ /php/mvc_autoloader/public/index.php?url=$1 [L,QSA]
+RewriteRule ^(.*)$ /php/mvc_autoloader_register/public/index.php?url=$1 [L,QSA]
 # RewriteRule ^(.*)$ /php/mvc_autoloader/index.php?$1 [L,QSA]

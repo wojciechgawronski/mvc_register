@@ -9,6 +9,13 @@ set_error_handler('myError');
 set_exception_handler('myException');
 
 /**
+ * Session
+ * session regenrate only during login 
+ * sessja za zdefiniowaną obłsugąnłędów
+ */
+session_start();
+
+/**
  * Autoloader
  */
 spl_autoload_register('myAutoloader');

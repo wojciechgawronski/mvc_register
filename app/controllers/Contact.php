@@ -2,10 +2,14 @@
 
 use app\core\View;
 use app\core\Controller;
+use app\core\models\Authenticated;
+use app\core\models\Authentication;
 
 /**
  * 
  */
+// kalsa Authenticated ma filtryu akcji dostępne dla wszystkich metod
+ // class Contact extends Authenticated
 class Contact extends Controller
 {
       /**
@@ -22,6 +26,8 @@ class Contact extends Controller
       {
             $this->before();
 
+            $this->requiredLogin();
+
             View::renderView('contact/index');
 
             $this->after();
@@ -33,8 +39,12 @@ class Contact extends Controller
       public function before($className = __CLASS__, $params = [])
       {
             include_once '../app/models/header.php';
-
+            
             parent::before($className, $header);
+            
+            // filtr akcji: autemtykacja dostępu
+            // $this->requiredLogin();
+
       }
 
       /**

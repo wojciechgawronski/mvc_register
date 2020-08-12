@@ -6,6 +6,9 @@ namespace app\core;
 use app\core\Config;
 use app\core\interfaces\ModelInterface;
 
+/**
+ * 
+ */
 class Database implements ModelInterface
 {
       public $isConnect;
@@ -42,7 +45,7 @@ class Database implements ModelInterface
             $this->isConnect = false;
       }
 
-      public function getRow($query, $params = [])
+      public function getRow(string $query, array $params = [])
       {
             try {
                   $stmt = $this->database->prepare($query);
@@ -53,7 +56,7 @@ class Database implements ModelInterface
             }
       }
 
-      public function getRows($query, $params = [])
+      public function getRows(string $query, array $params = [])
       {
             try {
                   
@@ -65,7 +68,7 @@ class Database implements ModelInterface
             }
       }
 
-      public function insertRow($query, $params = [])
+      public function insertRow(string $query, array $params = [])
       {
             try {
                   $stmt = $this->database->prepare($query);
@@ -78,7 +81,7 @@ class Database implements ModelInterface
       }
 
 
-      public function updateRow($query, $params = [])
+      public function updateRow(string $query, array $params = [])
       {
             try {
                   if ($this->insertRow($query, $params)) {
@@ -89,7 +92,7 @@ class Database implements ModelInterface
             }
       }
 
-      public function deleteRow($query, $params = [])
+      public function deleteRow(string $query, array $params = [])
       {
             $this->insertRow($query, $params);
       }

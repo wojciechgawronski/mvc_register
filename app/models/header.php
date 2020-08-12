@@ -26,11 +26,12 @@ $header = [
 
       'log_in' => [
             'title' => "Log In",
-            'subtitle' => "Zaloguj się<span class='orange'>&darr;</span>"
+            'subtitle' => "Zaloguj się <span class='orange'>&darr;</span>"
       ],
 
-      'sign_in' => [
-            'title' => "Sign In",
-            'subtitle' => "Zaloguj się<span class='orange'>&darr;</span>"
-      ]
+      'signup' => [
+            'title' => "Sign Up",
+            'subtitle' => "Zarejestruj się <span class='orange'>&darr;</span>"
+      ],
+
 ];

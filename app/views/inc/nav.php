@@ -2,8 +2,16 @@
 
 $url = $_GET['url'] ?? 'home';
 $url = explode('/', $url);
-if(is_array($url)) $url = $url[0];
-
+// _print($url);
+// last part of URL
+$url = $url[1] ?? $url[0];
+// if (is_array($url)) {
+//       $url = $url[1];
+// }
+// echo $a;
+// _print($params);
+// _print($class);
+// _print($_POST);
 ?>
 
 <nav>
@@ -35,22 +43,40 @@ if(is_array($url)) $url = $url[0];
                         " href="contact">Contact</a>
                   </li>
             </ul>
-
             <ul class="nav">
 
                   <li class="nav-item">
                         <span class="nav-link px-0 orange" href="">| </span>
                   </li>
-                  <li class="nav-item">
-                        <a class="nav-link
-                        <?php echo $url == "log_in" ? " b " : ""; ?>
-                        " href="login/log_in" title="Zaloguj się">Log In</a>
-                  </li>
-                  <li class="nav-item">
-                        <a class="nav-link pr-0
-                        <?php echo $url == "sign_in" ? " b " : ""; ?>
-                        " href="login/sign_in" title="Zarejestruj się">Sign In</a>
-                  </li>
+
+                  <?php 
+                  if(isset($_SESSION['user_id'])){
+                        echo "<li class='nav-item '>
+                              <span class='nav-link gray i'>
+                              {$_SESSION['user_email']}
+                              </span>
+                        </li>";
+                        echo "<li class='nav-item'>
+                                    <a class='nav-link b text-warning' href='login/logout'>Log Out</a>
+                              </li>";
+                  }
+                  else{
+                        echo "
+                        <li class='nav-item'>
+                              <a class='nav-link";
+                              echo $url == 'log_in' ? ' b ' : '';
+                              echo $url == 'login' ? ' b ' : '';
+                              echo "' href='login/log_in' title='Zaloguj się'>Log In</a>
+                        </li>
+                        <li class='nav-item'>
+                              <a class='nav-link pr-0";
+                              echo $url == 'signup' ? ' b ' : '';
+                              echo $url == 'signupUser' ? ' b ' : ''; 
+                              echo "' href='login/signup' title='Zarejestruj się'>Sign Up</a>
+                        </li>";
+                  }
+                  ?>
+
             </ul>
       </div>
 </nav>

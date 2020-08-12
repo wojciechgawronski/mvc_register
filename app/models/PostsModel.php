@@ -10,7 +10,7 @@ class PostsModel{
 
       public static function getAll(){
             $sql = "SELECT * FROM posts";
-            $posts = Model::getRows($sql);
+            $posts = Model::getRows($sql, []);
             return $posts;
       }
 }
