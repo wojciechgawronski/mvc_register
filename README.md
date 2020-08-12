@@ -1,5 +1,5 @@
 # mvc_register
-Szkielet aplikacji w arvhotektórze MVC w czystym PHP służącej do logowania i rejestracji, na podstawie kilku tutoriali i własnych doświadczeń.
+Szkielet aplikacji w architektórze MVC w czystym PHP służącej do logowania i rejestracji, na podstawie kilku tutoriali i własnych doświadczeń.
 <br><br>
 
 Link: https://gawronsky.com.pl/mvc_register
