@@ -24,4 +24,4 @@ W Aplikacji ze względu na katalogi i funkcje można wyróżnic obszary:
 </ul>
 
 <br><br>
-Aplikacja będzie dalej rozwijana, repozytorium powyższe przedstawia jedynie zamysł.
+Powyższe repozytorium przedstawia jedynie zamysł.
